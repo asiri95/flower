@@ -1,6 +1,6 @@
 # Flower shop website
 
-A simple, elegant, bilingual (English / العربية) website for a flower shop in Amman.
+Website for **Remas Flowers** (Khalil As-Salem St., Amman). A simple, elegant, bilingual (English / العربية) website for a flower shop in Amman.
 There is **no checkout, no backend and no database**. Every order, wedding inquiry and
 question goes straight to the shop's **WhatsApp** as a ready-written message.
 

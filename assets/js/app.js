@@ -11,10 +11,10 @@
   const T = {
     en: {
       "nav.shop": "Shop", "nav.weddings": "Weddings", "nav.gallery": "Gallery", "nav.visit": "Visit us",
-      "hero.eyebrow": "Florist · Amman",
+      "hero.eyebrow": "Flowers shop & wedding planner · Amman",
       "hero.title": "Flowers that say it beautifully",
       "hero.shop": "Order flowers", "hero.weddings": "Plan your wedding",
-      "hero.p1": "Same-day delivery", "hero.p2": "Order on WhatsApp", "hero.p3": "Hand-made with love",
+      "hero.p1": "Delivery across Amman", "hero.p2": "Order on WhatsApp", "hero.p3": "Hand-made with love",
       "steps.title": "How ordering works",
       "steps.s1": "Choose your flowers", "steps.s1d": "Add bouquets to your basket.",
       "steps.s2": "Add delivery details", "steps.s2d": "Date, area and a card message.",
@@ -36,6 +36,8 @@
       "wf.send": "Send inquiry on WhatsApp", "wf.notSure": "Not sure yet",
       "gal.eyebrow": "Our work", "gal.title": "Gallery", "gal.all": "All",
       "gal.order": "Order something like this",
+      "rev.eyebrow": "Kind words", "rev.title": "Loved across Amman",
+      "rev.more": n => `Read all ${n}+ reviews on Google`,
       "visit.eyebrow": "Visit the shop", "visit.title": "Come smell the roses",
       "visit.address": "Address", "visit.hours": "Opening hours", "visit.phone": "Phone",
       "visit.chat": "Chat on WhatsApp", "visit.map": "Open in Google Maps",
@@ -63,10 +65,10 @@
     },
     ar: {
       "nav.shop": "المتجر", "nav.weddings": "الأعراس", "nav.gallery": "معرض الصور", "nav.visit": "زورونا",
-      "hero.eyebrow": "محل ورد · عمّان",
+      "hero.eyebrow": "محل ورود ومنسّق أعراس · عمّان",
       "hero.title": "ورود تعبّر عنك بأجمل طريقة",
       "hero.shop": "اطلب ورد", "hero.weddings": "خطّط لعرسك",
-      "hero.p1": "توصيل في نفس اليوم", "hero.p2": "اطلب عبر واتساب", "hero.p3": "صُنع يدوياً بحب",
+      "hero.p1": "توصيل لكل عمّان", "hero.p2": "اطلب عبر واتساب", "hero.p3": "صُنع يدوياً بحب",
       "steps.title": "طريقة الطلب",
       "steps.s1": "اختر الورد", "steps.s1d": "أضف البوكيهات إلى السلة.",
       "steps.s2": "أدخل تفاصيل التوصيل", "steps.s2d": "التاريخ، المنطقة ورسالة الكرت.",
@@ -88,6 +90,8 @@
       "wf.send": "أرسل الاستفسار على واتساب", "wf.notSure": "لم أقرر بعد",
       "gal.eyebrow": "أعمالنا", "gal.title": "معرض الصور", "gal.all": "الكل",
       "gal.order": "أريد شيئاً مثل هذا",
+      "rev.eyebrow": "آراء زبائننا", "rev.title": "محبوبون في كل عمّان",
+      "rev.more": n => `اقرأ أكثر من ${n} تقييماً على جوجل`,
       "visit.eyebrow": "زوروا المحل", "visit.title": "تعالوا شمّوا الورد",
       "visit.address": "العنوان", "visit.hours": "ساعات العمل", "visit.phone": "الهاتف",
       "visit.chat": "راسلنا على واتساب", "visit.map": "افتح في خرائط جوجل",
@@ -263,6 +267,30 @@
     if (S.instagram) insta.href = S.instagram; else insta.hidden = true;
     $("#year").textContent = new Date().getFullYear();
     $("#heroImg").alt = L(S.name);
+    $("#logoImg").alt = L(S.name); $("#logoLightImg").alt = L(S.name);
+    if (S.logo) $("#logoImg").src = S.logo;
+    if (S.logoLight) $("#logoLightImg").src = S.logoLight;
+    const fp = $("#footerPhone"); fp.textContent = S.phone; fp.href = phone.href;
+    const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(S.mapQuery || L(S.address))}&hl=${lang}&z=16&output=embed`;
+    if ($("#mapFrame").getAttribute("src") !== mapSrc) $("#mapFrame").src = mapSrc;
+    $("#mapFrame").title = t("visit.map");
+    renderReviews();
+  }
+
+  /* ------------------------------------------------------------------
+     Reviews
+     ------------------------------------------------------------------ */
+  function renderReviews() {
+    const list = S.reviews || [];
+    $("#reviews").hidden = !list.length;
+    $("#reviewsList").innerHTML = list.map(r => `
+      <figure class="review">
+        <svg class="review__mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 14c-7 7-7 21 0 30 7-9 7-23 0-30Z"/><path d="M32 44c-4-9-12-14-21-14 0 8 9 14 21 14Z"/><path d="M32 44c4-9 12-14 21-14 0 8-9 14-21 14Z"/></svg>
+        <blockquote dir="auto">${esc(r.text)}</blockquote>
+        <figcaption><strong>${esc(r.name)}</strong><span>${esc(L(r.when))}</span></figcaption>
+      </figure>`).join("");
+    const more = $("#reviewsLink");
+    more.href = S.mapsUrl; more.textContent = t("rev.more", num(S.reviewsCount || list.length));
   }
 
   /* ------------------------------------------------------------------
@@ -504,7 +532,6 @@
 
   function init() {
     setImg($("#heroImg"), S.heroImage, "hero", "blush", "tall");
-    setImg($("#aboutImg"), S.aboutImage, "about", "peach", "wide");
 
     const today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
     const iso = today.toISOString().slice(0, 10);

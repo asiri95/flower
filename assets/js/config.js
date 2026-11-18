@@ -10,26 +10,30 @@
 
 window.SHOP = {
   // ---- Basic info --------------------------------------------------
-  name:    { en: "Zahra Flowers", ar: "زهرة للورود" },   // ← shop name
-  tagline: { en: "Fresh flowers & wedding styling in Amman",
+  name:    { en: "Remas Flowers", ar: "ريماس للورود" },
+  tagline: { en: "Fresh flowers & wedding planning in Amman",
              ar: "ورود طازجة وتنسيق أعراس في عمّان" },
+  logo:     "images/logo-dark.png",    // logo on light backgrounds
+  logoLight:"images/logo-light.png",   // logo on dark backgrounds (footer)
 
   // WhatsApp number in international format, digits only, no + or 00
   // Example for 079 123 4567  →  "962791234567"
-  whatsapp: "962790000000",
+  whatsapp: "962796616522",
 
-  phone: "+962 79 000 0000",
-  instagram: "https://instagram.com/",          // ← full Instagram link, or "" to hide
+  phone: "+962 79 661 6522",
+  instagram: "https://www.instagram.com/remas.flowers/",   // or "" to hide
   mapsUrl: "https://maps.app.goo.gl/sfwVofPZr5ktSmUL7",
-  address: { en: "Amman, Jordan", ar: "عمّان، الأردن" },
+  address: { en: "Khalil As-Salem St., Amman", ar: "شارع خليل السالم، عمّان" },
+  // Used for the embedded map (no API key needed)
+  mapQuery: "Remas Flowers, Khalil As-Salem St, Amman, Jordan",
   hours: [
-    { en: "Saturday – Thursday: 9:00 am – 10:00 pm", ar: "السبت – الخميس: ٩ صباحاً – ١٠ مساءً" },
-    { en: "Friday: 2:00 pm – 10:00 pm",             ar: "الجمعة: ٢ ظهراً – ١٠ مساءً" }
+    { en: "Saturday – Thursday: 9:00 am – 11:00 pm", ar: "السبت – الخميس: ٩ صباحاً – ١١ مساءً" },
+    { en: "Friday: 10:00 am – 11:00 pm",             ar: "الجمعة: ١٠ صباحاً – ١١ مساءً" }
   ],
 
   currency: { en: "JD", ar: "د.أ" },
-  deliveryNote: { en: "Same-day delivery across Amman for orders before 6 pm.",
-                  ar: "توصيل في نفس اليوم داخل عمّان للطلبات قبل الساعة ٦ مساءً." },
+  deliveryNote: { en: "Delivery across Amman. Message us for same-day orders.",
+                  ar: "توصيل لجميع مناطق عمّان. راسلنا للطلبات في نفس اليوم." },
 
   // Areas shown in the delivery form
   areas: [
@@ -132,6 +136,17 @@ window.SHOP = {
     { image: "", category: "events",   palette: "ivory",    shape: "square", caption: { en: "Baby shower welcome",         ar: "استقبال مولود" } },
     { image: "", category: "bouquets", palette: "sage",     shape: "square", caption: { en: "White & green classic",       ar: "أبيض وأخضر كلاسيك" } },
     { image: "", category: "weddings", palette: "red",      shape: "wide",   caption: { en: "Red rose reception tables",   ar: "طاولات استقبال بالورد الأحمر" } }
+  ],
+
+  // ---- Customer reviews (from Google Maps) -------------------------
+  reviewsCount: 45,   // shown as "45+ reviews on Google"
+  reviews: [
+    { name: "Ahlam A.",   when: { en: "a month ago",  ar: "قبل شهر" },
+      text: "Great service and best beautiful flowers ❤️🌸" },
+    { name: "Abdallah A.", when: { en: "2 years ago", ar: "قبل سنتين" },
+      text: "Wonderful flower arrangements & great flowers!" },
+    { name: "Raghad S.",  when: { en: "4 months ago", ar: "قبل ٤ أشهر" },
+      text: "Best flowers everrrrr !!!!" }
   ],
 
   heroImage: "",   // optional big photo for the top of the page
