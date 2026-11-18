@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flower Shop · Amman</title>
+  <meta name="description" content="Fresh flowers, bouquets and wedding styling in Amman. Order directly on WhatsApp.">
+  <meta name="theme-color" content="#FBF8F4">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B8%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Tajawal:wght@400;500;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============ Header ============ -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="#top" class="brand" data-shop="name"></a>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#shop" data-i18n="nav.shop"></a>
+        <a href="#weddings" data-i18n="nav.weddings"></a>
+        <a href="#gallery" data-i18n="nav.gallery"></a>
+        <a href="#visit" data-i18n="nav.visit"></a>
+      </nav>
+      <div class="header__actions">
+        <button class="lang-btn" id="langBtn" type="button" aria-label="Change language"></button>
+        <button class="basket-btn" id="basketBtn" type="button" aria-label="Basket">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span class="badge" id="basketCount" hidden>0</span>
+        </button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ Hero ============ -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+          <h1 data-i18n="hero.title"></h1>
+          <p class="lead" data-shop="tagline"></p>
+          <div class="hero__cta">
+            <a href="#shop" class="btn btn--primary" data-i18n="hero.shop"></a>
+            <a href="#weddings" class="btn btn--ghost" data-i18n="hero.weddings"></a>
+          </div>
+          <ul class="hero__points">
+            <li data-i18n="hero.p1"></li>
+            <li data-i18n="hero.p2"></li>
+            <li data-i18n="hero.p3"></li>
+          </ul>
+        </div>
+        <div class="hero__art">
+          <img id="heroImg" alt="" width="560" height="680">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ How it works ============ -->
+    <section class="steps container" aria-labelledby="stepsTitle">
+      <h2 class="visually-hidden" id="stepsTitle" data-i18n="steps.title"></h2>
+      <ol class="steps__list">
+        <li><span class="steps__num">1</span><div><strong data-i18n="steps.s1"></strong><p data-i18n="steps.s1d"></p></div></li>
+        <li><span class="steps__num">2</span><div><strong data-i18n="steps.s2"></strong><p data-i18n="steps.s2d"></p></div></li>
+        <li><span class="steps__num">3</span><div><strong data-i18n="steps.s3"></strong><p data-i18n="steps.s3d"></p></div></li>
+      </ol>
+    </section>
+
+    <!-- ============ Shop ============ -->
+    <section class="section" id="shop">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow" data-i18n="shop.eyebrow"></p>
+          <h2 data-i18n="shop.title"></h2>
+          <p class="muted" data-shop="deliveryNote"></p>
+        </header>
+        <div class="chips" id="shopFilters" role="tablist"></div>
+        <div class="products" id="products"></div>
+        <div class="custom-order">
+          <div>
+            <h3 data-i18n="custom.title"></h3>
+            <p class="muted" data-i18n="custom.text"></p>
+          </div>
+          <a class="btn btn--wa" id="customOrderBtn" target="_blank" rel="noopener">
+            <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.7a10.7 10.7 0 0 1-5.5-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.7 10.7 0 1 1 16 26.7Zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.7 14.7 0 0 0 5.6 5c2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.4Z"/></svg>
+            <span data-i18n="custom.btn"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Weddings ============ -->
+    <section class="section section--tinted" id="weddings">
+      <div class="container">
+        <div class="wedding-intro">
+          <div class="wedding-intro__art"><img id="weddingImg" alt="" width="520" height="620"></div>
+          <div>
+            <p class="eyebrow" data-i18n="wed.eyebrow"></p>
+            <h2 data-i18n="wed.title"></h2>
+            <p class="lead" data-i18n="wed.text"></p>
+            <ul class="services" id="weddingServices"></ul>
+            <a href="#weddingForm" class="btn btn--primary" data-i18n="wed.cta"></a>
+          </div>
+        </div>
+
+        <div class="packages" id="weddingPackages"></div>
+
+        <form class="card form" id="weddingForm" novalidate>
+          <h3 data-i18n="wf.title"></h3>
+          <p class="muted" data-i18n="wf.text"></p>
+          <div class="form__grid">
+            <label><span data-i18n="wf.names"></span><input name="names" required autocomplete="name"></label>
+            <label><span data-i18n="wf.date"></span><input name="date" type="date" required></label>
+            <label><span data-i18n="wf.venue"></span><input name="venue"></label>
+            <label><span data-i18n="wf.guests"></span><input name="guests" type="number" min="0" inputmode="numeric"></label>
+            <label><span data-i18n="wf.package"></span><select name="package" id="wfPackage"></select></label>
+            <label><span data-i18n="wf.budget"></span><input name="budget" inputmode="numeric"></label>
+          </div>
+          <fieldset class="form__checks">
+            <legend data-i18n="wf.services"></legend>
+            <div id="wfServices"></div>
+          </fieldset>
+          <label><span data-i18n="wf.notes"></span><textarea name="notes" rows="3"></textarea></label>
+          <button class="btn btn--wa btn--block" type="submit">
+            <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#wa"/></svg>
+            <span data-i18n="wf.send"></span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ Gallery ============ -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow" data-i18n="gal.eyebrow"></p>
+          <h2 data-i18n="gal.title"></h2>
+        </header>
+        <div class="chips" id="galleryFilters" role="tablist"></div>
+        <div class="gallery" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ Visit ============ -->
+    <section class="section section--tinted" id="visit">
+      <div class="container visit">
+        <div>
+          <p class="eyebrow" data-i18n="visit.eyebrow"></p>
+          <h2 data-i18n="visit.title"></h2>
+          <dl class="visit__info">
+            <div><dt data-i18n="visit.address"></dt><dd data-shop="address"></dd></div>
+            <div><dt data-i18n="visit.hours"></dt><dd id="hours"></dd></div>
+            <div><dt data-i18n="visit.phone"></dt><dd><a id="phoneLink" dir="ltr"></a></dd></div>
+          </dl>
+          <div class="hero__cta">
+            <a class="btn btn--wa" id="visitWa" target="_blank" rel="noopener">
+              <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#wa"/></svg>
+              <span data-i18n="visit.chat"></span>
+            </a>
+            <a class="btn btn--ghost" id="mapsLink" target="_blank" rel="noopener" data-i18n="visit.map"></a>
+          </div>
+        </div>
+        <div class="visit__art"><img id="aboutImg" alt="" width="520" height="420"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="brand" data-shop="name"></span>
+      <a id="instaLink" target="_blank" rel="noopener">Instagram</a>
+      <small>© <span id="year"></span> <span data-shop="name"></span></small>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wa"/></svg>
+  </a>
+
+  <!-- Mobile basket bar -->
+  <button class="basket-bar" id="basketBar" type="button" hidden>
+    <span id="basketBarText"></span>
+    <strong data-i18n="basket.view"></strong>
+  </button>
+
+  <!-- ============ Basket drawer ============ -->
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-labelledby="drawerTitle" role="dialog">
+    <div class="drawer__head">
+      <h2 id="drawerTitle" data-i18n="basket.title"></h2>
+      <button class="icon-btn" id="drawerClose" type="button" aria-label="Close">✕</button>
+    </div>
+    <div class="drawer__body">
+      <ul class="basket" id="basketList"></ul>
+      <p class="basket__empty muted" id="basketEmpty" data-i18n="basket.empty"></p>
+
+      <form class="form" id="orderForm" novalidate>
+        <h3 data-i18n="of.title"></h3>
+        <div class="segmented" role="radiogroup">
+          <label><input type="radio" name="method" value="delivery" checked><span data-i18n="of.delivery"></span></label>
+          <label><input type="radio" name="method" value="pickup"><span data-i18n="of.pickup"></span></label>
+        </div>
+        <label><span data-i18n="of.name"></span><input name="name" required autocomplete="name"></label>
+        <div class="form__grid">
+          <label><span data-i18n="of.date"></span><input name="date" type="date" required></label>
+          <label><span data-i18n="of.time"></span>
+            <select name="time" id="ofTime"></select>
+          </label>
+        </div>
+        <div class="delivery-only">
+          <label><span data-i18n="of.recipient"></span><input name="recipient"></label>
+          <label><span data-i18n="of.area"></span><select name="area" id="ofArea"></select></label>
+          <label><span data-i18n="of.address"></span><input name="address"></label>
+        </div>
+        <label><span data-i18n="of.card"></span><textarea name="card" rows="2" data-i18n-placeholder="of.cardPh"></textarea></label>
+        <label><span data-i18n="of.notes"></span><textarea name="notes" rows="2"></textarea></label>
+      </form>
+    </div>
+    <div class="drawer__foot">
+      <div class="total"><span data-i18n="basket.total"></span><strong id="basketTotal"></strong></div>
+      <button class="btn btn--wa btn--block" id="sendOrder" type="button">
+        <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#wa"/></svg>
+        <span data-i18n="basket.send"></span>
+      </button>
+      <p class="tiny muted" data-i18n="basket.hint"></p>
+    </div>
+  </aside>
+
+  <!-- ============ Lightbox ============ -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true">
+    <button class="lightbox__close icon-btn" id="lbClose" type="button" aria-label="Close">✕</button>
+    <button class="lightbox__nav lightbox__prev" id="lbPrev" type="button" aria-label="Previous">‹</button>
+    <figure>
+      <img id="lbImg" alt="">
+      <figcaption>
+        <span id="lbCaption"></span>
+        <a class="btn btn--wa btn--sm" id="lbOrder" target="_blank" rel="noopener">
+          <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#wa"/></svg>
+          <span data-i18n="gal.order"></span>
+        </a>
+      </figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__next" id="lbNext" type="button" aria-label="Next">›</button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- WhatsApp icon symbol -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="wa" viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.7a10.7 10.7 0 0 1-5.5-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.7 10.7 0 1 1 16 26.7Zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.7 14.7 0 0 0 5.6 5c2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.4Z"/></symbol>
+  </svg>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
